@@ -11,7 +11,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
 export default function About() {
@@ -22,6 +22,16 @@ export default function About() {
       {/* Background decoration */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-20 w-72 h-72 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Mobile Abstract Background Image */}
+      <div className="absolute top-0 right-0 w-full h-full lg:hidden overflow-hidden pointer-events-none opacity-[0.03] sm:opacity-[0.05]">
+        <img 
+          src="/me.jpg" 
+          alt=""
+          className="absolute -top-20 -right-20 w-[150%] h-auto max-w-none grayscale blur-3xl rotate-12"
+          onLoad={() => setImageLoaded(true)}
+        />
+      </div>
 
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -81,10 +91,10 @@ export default function About() {
             ))}
           </motion.div>
 
-          {/* Image/Avatar Card */}
+          {/* Image/Avatar Card - Hidden on Mobile, replaced by background */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 relative group overflow-hidden rounded-2xl bg-[var(--color-card-bg)]"
+            className="hidden lg:flex md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 relative group overflow-hidden rounded-2xl bg-[var(--color-card-bg)]"
           >
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Profile Image */}

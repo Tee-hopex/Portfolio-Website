@@ -14,7 +14,7 @@ function SkillBar({ name, level, index }: { name: string; level: number; index: 
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: index * 0.06, ease: 'easeOut' }}
+          transition={{ duration: 1, delay: index * 0.06, ease: 'easeOut' as const }}
           className="h-full rounded-full bg-gradient-to-r from-teal-500 to-cyan-400"
         />
       </div>

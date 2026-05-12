@@ -57,7 +57,7 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: 'easeOut' as const }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'py-3 bg-[var(--color-nav-bg)] backdrop-blur-xl border-b border-[var(--color-card-border)] shadow-xl shadow-black/10'

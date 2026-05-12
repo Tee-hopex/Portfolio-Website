@@ -16,7 +16,7 @@ export default function SectionHeading({ label, title, subtitle, className = '' 
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: 'easeOut' as const }}
         className="flex items-center gap-4 mb-4"
       >
         <div className="relative">
@@ -31,7 +31,7 @@ export default function SectionHeading({ label, title, subtitle, className = '' 
           initial={{ width: 0 }}
           whileInView={{ width: '80px' }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' as const }}
           className="h-px bg-gradient-to-r from-teal-500/40 to-transparent" 
         />
       </motion.div>
